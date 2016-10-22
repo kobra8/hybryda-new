@@ -1,0 +1,16 @@
+UPDATE `czesc` SET `numerkat_c`= 27 WHERE `numerkat_c`= 25 ;
+UPDATE `czesc` SET `ser_c`= 10 WHERE `katalog_c` LIKE '1756%' ;
+UPDATE `czesc` SET `numerpod_c`= 28 WHERE `katalog_c` LIKE 'IC693CPU%' ;
+UPDATE `czesc` SET `numerpod_c`= 28 WHERE `katalog_c` LIKE 'a1s-6_da%' ;
+UPDATE `czesc` SET `numerpod_c`= 28 WHERE `katalog_c` LIKE '1794%L%' AND `firm_c` = 'Allen Bradley';
+UPDATE `czesc` SET `numerpod_c`= 39 WHERE `numerkat_c` = 22 ;
+UPDATE `czesc` SET `numerkat_c`= 30 WHERE `numerpod_c` = 39 ;
+SELECT * FROM `czesc` WHERE `numerkat_c` = 31 AND `numerpod_c` = 0 ;
+UPDATE `czesc` SET `numerpod_c`= 38 WHERE `numerkat_c` = 31 AND `numerpod_c` = 0 ;
+UPDATE `czesc` SET `numerpod_c`= 28 WHERE `katalog_c` LIKE '%CPU%' AND `numerkat_c` = 31 AND `numerpod_c` = 0 ;
+UPDATE `czesc` SET `ser_c`= 9 WHERE `katalog_c` LIKE '6ES5%' ;
+UPDATE `czesc` SET `katalog_c`=(replace(katalog_c,'6ES5410','6ES5-410'));
+UPDATE `czesc` SET `katalog_c`=(replace(katalog_c,'6ES5410','6ES5-410')) WHERE `firm_c` = 'Siemens';
+UPDATE `czesc` SET `ser_c`= 9 WHERE `katalog_c` LIKE '6ES5%' AND `firm_c` = 'GE Fanuc';
+UPDATE `czesc` SET `katalog_c`=(replace(katalog_c,'Œwietlówka','Œwietlówka LCD CCFL20133 œrednica: 2,0 d³ugoœæ: mm - LONGLIFE'));
+UPDATE `czesc` SET `numerpod_c`= 21 WHERE `katalog_c` LIKE '%œrednica: 2,6%' ;
