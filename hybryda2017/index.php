@@ -1,56 +1,46 @@
-<?php
-/**
- * The main template file
- *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package hybryda2017
- */
+<!DOCTYPE html>
+<html>
+<head>
+	<title><?php wp_title() ?> </title>
+	<meta charset="<?php bloginfo( 'charset' ); ?>">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
 
-get_header(); ?>
+	<?php wp_head(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+</head>
+
+<body>
+	
+	<header>
+	
+		<p>tu jest header <p>
+		
+	</header>
+
+	<div id="content">
 
 		<?php
-		if ( have_posts() ) :
+			if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+				/* Start the Loop */
+				while ( have_posts() ) : the_post();
+				
+					echo the_title($before, $after, $echo);
+					echo the_content();
 
-			<?php
-			endif;
+				endwhile;
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+			endif; 
+		?>
+		
+	</div><!-- #content -->
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+	<footer id="colophon" class="site-footer" role="contentinfo">
+		<p> Tu jest stopka </p>
+	</footer>
 
-			endwhile;
+<?php wp_footer(); ?>
 
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+</body>
+</html>
