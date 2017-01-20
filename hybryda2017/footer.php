@@ -25,8 +25,9 @@
 <?php wp_footer(); ?>
 
 <!-- Scripts -->
+            <script src="<?php echo(bloginfo(template_directory).'/js/jquery.js'); ?>"></script>
 			<script src="<?php echo(bloginfo(template_directory).'/js/bootsrap.js'); ?>"></script>
-			<script src="<?php echo(bloginfo(template_directory).'/js/jquery.min.js'); ?>"></script>
+			
 
 </body>
 </html>
