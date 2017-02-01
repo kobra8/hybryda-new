@@ -140,10 +140,10 @@ Additional styles customized
       min-height:200px;
   }
 
-.carousel-inner h3 {
+.carousel-inner h4 {
       width: 70%; /* Set width to 100% */
       margin: auto;
-      background-color: #FAF5F0;
+      background-color: #fff;
       padding: 10px 10px 2px 10px;
   }
 
@@ -151,8 +151,9 @@ Additional styles customized
       width: 70%; /* Set width to 100% */
       margin: auto;
       min-height:200px;
-      background-color: #FAF5F0;
+      background-color: #fff;
       padding: 2px 10px 10px 10px;
+      text-align:justify;
   }
 
 
