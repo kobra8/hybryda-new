@@ -156,6 +156,12 @@ Additional styles customized
       text-align:justify;
   }
 
+.logo {
+  width: 364px;
+  height: 81px;
+  float: left;
+}
+
 
   /* Hide the carousel text when the screen is less than 600 pixels wide */
   @media (max-width: 600px) {
