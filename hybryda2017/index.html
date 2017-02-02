@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="styles/bootstrap.css">
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.js"></script>    
  
@@ -27,8 +27,13 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="#">Aktualności</a></li>
-        <li><a href="#">O nas</a></li>
-        <li><a href="#">Galeria</a></li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">O nas<span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Zrealizowane projekty</a></li>
+              <li><a href="#">Znak jakości</a></li>
+            </ul>
+          </li>
+        <li><a href="#">Galeria</a></li> 
         <li><a href="#">Kontakt</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
