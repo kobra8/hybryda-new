@@ -1,4 +1,4 @@
-<?php wp_footer(); 
+<?php wp_footer(); ?>
 <!-- Footer -->
   
 <footer class="container-fluid text-center">
@@ -9,7 +9,7 @@
 
 <!-- Scripts -->
             <script src="<?php echo(bloginfo(template_directory).'/js/jquery.js'); ?>"></script>
-			<script src="<?php echo(bloginfo(template_directory).'/js/bootsrap.js'); ?>"></script>
+			<script src="<?php echo(bloginfo(template_directory).'/js/bootstrap.js'); ?>"></script>
 			
 
 </body>

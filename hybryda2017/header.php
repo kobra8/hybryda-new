@@ -14,7 +14,7 @@
 		  <nav class="navbar navbar-inverse">
             <div class="container-fluid">
               <div class="navbar-header">
-                <a href="href="<?php echo(bloginfo('/index.php')); ?>>
+                <a href="<?php echo get_settings('home'); ?>/">
                 <img class="logo imgmenu" src="<?php echo(bloginfo(template_directory).'/images/logo_hyb_biale.png'); ?>">
                 </a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -40,7 +40,7 @@
                   <li><a href="#">Kontakt</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                  <li><a href="<?php echo get_settings('home').'/wp-admin'; ?>/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
                </ul>
                 <ul  class="contact-details">
                             	<li><a  href="#"><i></i><?php echo get_theme_mod( 'phone_number' ); ?></a></li>
@@ -54,7 +54,9 @@
 
 				<!-- Nav -->
      
+<!--
 					<nav id="nav">
                        <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
 						
 					</nav>
+-->
