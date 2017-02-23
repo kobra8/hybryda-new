@@ -124,6 +124,21 @@ Additional styles customized
       margin-bottom: 0;
       background-color: red;
     }
+
+/* Style nr telefonu i emaila*/
+
+.contact-details li {
+	display: inline-block;
+}
+
+.contact-details li:first-child:after{
+	position: relative;
+	content: „|”;
+	font-size: 13px;
+	margin: 0 3px;
+	top: -1px;
+	color: #ddd;
+}
     
     /* Add a background color and some padding to the footer */
     footer {

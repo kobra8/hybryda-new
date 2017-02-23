@@ -1,143 +1,85 @@
 <?php
-/**
- * hybryda2017 functions and definitions
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package hybryda2017
- */
-
-if ( ! function_exists( 'hybryda2017_setup' ) ) :
-/**
- * Sets up theme defaults and registers support for various WordPress features.
- *
- * Note that this function is hooked into the after_setup_theme hook, which
- * runs before the init hook. The init hook is too late for some features, such
- * as indicating support for post thumbnails.
- */
-function hybryda2017_setup() {
-	/*
-	 * Make theme available for translation.
-	 * Translations can be filed in the /languages/ directory.
-	 * If you're building a theme based on hybryda2017, use a find and replace
-	 * to change 'hybryda2017' to the name of your theme in all the template files.
-	 */
-	load_theme_textdomain( 'hybryda2017', get_template_directory() . '/languages' );
-
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
-
-	/*
-	 * Let WordPress manage the document title.
-	 * By adding theme support, we declare that this theme does not use a
-	 * hard-coded <title> tag in the document head, and expect WordPress to
-	 * provide it for us.
-	 */
-	add_theme_support( 'title-tag' );
-
-	/*
-	 * Enable support for Post Thumbnails on posts and pages.
-	 *
-	 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-	 */
-	add_theme_support( 'post-thumbnails' );
-
-	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'hybryda2017' ),
-	) );
-
-	/*
-	 * Switch default core markup for search form, comment form, and comments
-	 * to output valid HTML5.
-	 */
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
-
-	// Set up the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'hybryda2017_custom_background_args', array(
-		'default-color' => 'ffffff',
-		'default-image' => '',
-	) ) );
-
-	// Add theme support for selective refresh for widgets.
-	add_theme_support( 'customize-selective-refresh-widgets' );
+function register_my_menu() {
+  register_nav_menu('header-menu',__( 'Header Menu' ));
 }
-endif;
-add_action( 'after_setup_theme', 'hybryda2017_setup' );
+add_action( 'init', 'register_my_menu' );
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function hybryda2017_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'hybryda2017_content_width', 640 );
+add_theme_support('post-thumbnails');
+add_theme_support('custom-logo', ['height' => 150, 'width' => 150]);
+
+function register_my_widget(){
+  register_sidebar(array(
+      'name' => 'Widget w stopce',
+      'id'  => 'footer_1',
+      'before_widget' => '<div>',
+    'after_widget' => '</div>',
+    'before_title' =>'<h2>',
+    'after_title' =>'</h2>'
+  ));
+  register_sidebar(array(
+      'name' => 'Widget w stopce z prawej',
+      'id'  => 'footer_2',
+      'before_widget' => '<div>',
+    'after_widget' => '</div>',
+    'before_title' =>'<h2>',
+    'after_title' =>'</h2>'
+  ));
 }
-add_action( 'after_setup_theme', 'hybryda2017_content_width', 0 );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function hybryda2017_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'hybryda2017' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'hybryda2017' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+add_action('widgets_init','register_my_widget');
+
+function phone_customizer( $wp_customize ) {
+	
+    $wp_customize->add_section( ‚phone_section_one’, array(
+     ‚title’       => __( ‚Contact Phone Details’, ‚WPtuts’ ),
+     ‚description’ => __( ‚This is a settings section to change the phone contact details in the header.’, ‚WPTuts’ ),
+     ‚priority’    => 30,
+      )
+    );
+	
+    $wp_customize->add_setting(
+     ‚phone_number’, array(
+     ‚default’ => __( ‚14 6272282’, ‚WPtuts’ ),
+     ‚sanitize_callback’ => ‚WPtuts_sanitize_text’,
+      )
+    );
+	
+    $wp_customize->add_control(
+     ‚phone_number’, array(
+     ‚label’    => __( ‚Default Phone Number’, ‚WPtuts’ ),
+     ‚section’ => ‚phone_section_one’,
+     ‚type’ => ‚text’,
+      )
+    );
+
 }
-add_action( 'widgets_init', 'hybryda2017_widgets_init' );
+add_action( ‚customize_register’, ‚phone_customizer’ );
 
-/**
- * Enqueue scripts and styles.
- */
-function hybryda2017_scripts() {
-	wp_enqueue_style( 'hybryda2017-style', get_stylesheet_uri() );
+function email_customizer( $wp_customize ) {
+	
+    $wp_customize->add_section( ’email_section_one’, array(
+     ‚title’       => __( ‚Email Contact Details’, ‚WPtuts’ ),
+     ‚description’ => __( ‚This is a settings section to change the e-mail contact details in the header.’, ‚WPTuts’ ),
+     ‚priority’    => 60,
+      )
+    );
+	
+    $wp_customize->add_setting(
+     ’email_address’, array(
+     ‚default’ => __( ‚hybryda22@wp.pl’, ‚WPtuts’ ),
+     ‚sanitize_callback’ => ‚WPtuts_sanitize_text’,
+      )
+    );
+	
+    $wp_customize->add_control(
+     ’email_address’, array(
+     ‚label’    => __( ‚Default Email Address’, ‚WPtuts’ ),
+     ‚section’ => ’email_section_one’,
+     ‚type’ => ‚text’,
+      )
+    );
 
-	wp_enqueue_script( 'hybryda2017-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
-	wp_enqueue_script( 'hybryda2017-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
 }
-add_action( 'wp_enqueue_scripts', 'hybryda2017_scripts' );
+add_action( ‚customize_register’, ’email_customizer’ );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Custom functions that act independently of the theme templates.
- */
-require get_template_directory() . '/inc/extras.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
+?>
