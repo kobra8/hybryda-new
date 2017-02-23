@@ -129,15 +129,8 @@ Additional styles customized
 
 .contact-details li {
 	display: inline-block;
-}
-
-.contact-details li:first-child:after{
-	position: relative;
-	content: „|”;
-	font-size: 13px;
-	margin: 0 3px;
-	top: -1px;
-	color: #ddd;
+    padding-bottom: 4px;
+    padding-right: 2px;
 }
     
     /* Add a background color and some padding to the footer */
