@@ -6,6 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="<?php echo(bloginfo('stylesheet_url')); ?>">
         <link rel="stylesheet" href="<?php echo(bloginfo(template_directory).'/styles/bootstrap.css'); ?>">
+        <link rel="icon" type="image/png" href="<?php echo(bloginfo(template_directory).'/styles/bootstrap.css'); ?>"/>
     <?php wp_head(); ?>
 	</head>
 	<body>
