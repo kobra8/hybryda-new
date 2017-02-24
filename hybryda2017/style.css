@@ -122,7 +122,6 @@ Additional styles customized
  /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
-      background-color: red;
     }
 
 /* Style nr telefonu i emaila*/
@@ -131,6 +130,9 @@ Additional styles customized
 	display: inline-block;
     padding-bottom: 4px;
     padding-right: 2px;
+}
+
+.center-content {
 }
     
     /* Add a background color and some padding to the footer */

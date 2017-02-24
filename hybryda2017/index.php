@@ -43,19 +43,19 @@
  <br>
   <div class="row">
     <div class="col-sm-4">
-      <a href="#">
+      <a href="<?php echo get_settings('home').'/?page_id=2396'; ?>">
         <img class="imgmenu"src="<?php echo(bloginfo(template_directory).'/images/oferta.jpg'); ?>" class="img-responsive" style="width:100%" alt="Image">
         <p>Oferta szkoleniowa</p>
       </a>
     </div>
     <div class="col-sm-4"> 
-      <a href="#">
+      <a href="<?php echo get_settings('home').'/?page_id=789'; ?>">
         <img class="imgmenu" src="<?php echo(bloginfo(template_directory).'/images/sale.jpg'); ?>" class="img-responsive" style="width:100%" alt="Image">
         <p>Sale szkoleniowe</p> 
       </a>
     </div>
       <div class="col-sm-4">
-        <a href="#">
+        <a href="<?php echo get_settings('home').'/?page_id=2381'; ?>">
           <img class="imgmenu" src="<?php echo(bloginfo(template_directory).'/images/projekty.jpg'); ?>" class="img-responsive" style="width:100%" alt="Image">
           <p>Realizowane projekty</p>
         </a>

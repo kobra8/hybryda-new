@@ -13,7 +13,7 @@
     	<header>
 		  <nav class="navbar navbar-inverse">
             <div class="container-fluid">
-              <div class="navbar-header">
+              <div class="navbar-header center-content">
                 <a href="<?php echo get_settings('home'); ?>/">
                 <img class="logo imgmenu" src="<?php echo(bloginfo(template_directory).'/images/logo_hyb_biale.png'); ?>">
                 </a>
@@ -29,7 +29,26 @@
                   <li><a  href="#"><i>&nbsp; <?php echo get_theme_mod( 'email_address' ); ?></i></a></li>
                 </ul>
               </div>
-              <div class="collapse navbar-collapse" id="myNavbar">
+             
+              
+              <!-- Menu wordpresowe z wp-bootstrap-navwalker  -->
+               
+                <?php
+                      wp_nav_menu( array(
+                          'menu'              => 'primary',
+                          'theme_location'    => 'primary',
+                          'depth'             => 2,
+                          'container'         => 'div',
+                          'container_class'   => 'collapse navbar-collapse',
+                          'container_id'      => 'myNavbar',
+                          'menu_class'        => 'nav navbar-nav',
+                          'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                          'walker'            => new wp_bootstrap_navwalker())
+                      );
+                  ?>
+               
+
+<!-- menu Bootstrap w HTML
                 <ul class="nav navbar-nav">
                   <li><a href="#">Aktualności</a></li>
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">O nas<span class="caret">          </span></a>
@@ -44,19 +63,7 @@
                   <li><a href="#">Galeria</a></li> 
                   <li><a href="#">Kontakt</a></li>
                 </ul>
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="<?php echo get_settings('home').'/wp-admin'; ?>/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-               </ul>
-              </div>
+-->            
             </div>
           </nav>    
 		</header>
-
-				<!-- Nav -->
-     
-<!-- Menu wordpresowe - może jednak nie będzie potrzebne
-					<nav id="nav">
-                       <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
-						
-					</nav>
--->

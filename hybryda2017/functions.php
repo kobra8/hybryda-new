@@ -1,8 +1,13 @@
 <?php
-function register_my_menu() {
-  register_nav_menu('header-menu',__( 'Header Menu' ));
-}
-add_action( 'init', 'register_my_menu' );
+
+require_once('wp_bootstrap_navwalker.php');
+
+register_nav_menus( array(
+    'primary' => __( 'Primary Menu', 'hybryda2017' ),
+) );
+//add_action( 'init', 'register_nav_menus' );
+
+
 
 add_theme_support('post-thumbnails');
 add_theme_support('custom-logo', ['height' => 150, 'width' => 150]);
