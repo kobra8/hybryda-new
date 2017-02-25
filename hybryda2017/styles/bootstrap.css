@@ -1414,7 +1414,7 @@ a.bg-danger:focus {
 ul,
 ol {
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 2px;
 }
 ul ul,
 ol ul,
@@ -6395,7 +6395,7 @@ button.close {
 }
 .carousel-indicators {
   position: absolute;
-  bottom: 10px;
+  bottom: 1px;
   left: 50%;
   z-index: 15;
   width: 60%;
@@ -6461,7 +6461,7 @@ button.close {
     padding-bottom: 30px;
   }
   .carousel-indicators {
-    bottom: 20px;
+    bottom: 10px;
   }
 }
 .clearfix:before,

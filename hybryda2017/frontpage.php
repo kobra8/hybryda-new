@@ -26,6 +26,10 @@ Template name: Strona główna
 			<div  class="item active">
 				<h4><?php the_title(); ?></h4>
 				<span><?php the_content(); ?></span>
+<!--             <span> 
+/* <?php echo get_slider_excerpt(); ?>*/ 
+</span> -->
+              <a  href="<?php the_permalink() ?>">Czytaj więcej</a>
 				</div>
 		<?php endwhile; ?>	
 		
@@ -38,6 +42,7 @@ Template name: Strona główna
 			<div  class="item">
 				<h4><?php the_title(); ?></h4>
 				<span><?php the_content(); ?></span>
+              <a  href="<?php the_permalink() ?>">Czytaj więcej</a>
 				</div>
 		<?php endwhile; ?>	
 	</div>
