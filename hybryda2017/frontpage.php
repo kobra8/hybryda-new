@@ -16,20 +16,47 @@ Template name: Strona główna
 
         <!-- Wrapper for slides WP post loop -->
 
-  <div class="carousel-inner" role="listbox">
+  <div class="carousel-inner" role="listbox"> 
+    
 		<?php $the_query = new WP_Query(array(
-			  'posts_per_page' => 5
+			  'posts_per_page' => 1
+			  ));
+		?>
+    		<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
+			<div  class="item active">
+				<h4><?php the_title(); ?></h4>
+				<span><?php the_content(); ?></span>
+				</div>
+		<?php endwhile; ?>	
+		
+    
+    <?php $the_query = new WP_Query(array(
+			  'posts_per_page' => 4
 			  ));
 		?>
     		<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
 			<div  class="item">
 				<h4><?php the_title(); ?></h4>
-				<p class="center-block"><?php the_content(); ?></p>
+				<span><?php the_content(); ?></span>
 				</div>
 		<?php endwhile; ?>	
-				
 	</div>
+    
+<!--
+<script>
+    function changeclass() {
 
+var NAME = document.getElementById("myCarousel")
+
+NAME.className="carousel slide"
+
+}
+ 
+ </script>   
+    
+<button type="button"onclick="changeclass();">ZMIEN KLASE</button>
+-->
+    
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>

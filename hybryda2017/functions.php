@@ -7,6 +7,16 @@ register_nav_menus( array(
 ) );
 //add_action( 'init', 'register_nav_menus' );
 
+function hybryda2017_scripts() {
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri()."/styles/bootstrap.css" );
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
+   // załaduj biblioteki jQuery
+    wp_enqueue_script( 'jquery-js', get_template_directory_uri() . '/js/jquery.js', array( 'jquery' ), '',  true );	
+    // załaduj skrypt js bootstrapa
+    wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), '',  true );
+}
+
+add_action( 'wp_enqueue_scripts', 'hybryda2017_scripts' );
 
 
 add_theme_support('post-thumbnails');

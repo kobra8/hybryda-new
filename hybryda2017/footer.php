@@ -12,10 +12,5 @@
   </div>
 </footer>
 
-<!-- Scripts -->
-            <script src="<?php echo(bloginfo(template_directory).'/js/jquery.js'); ?>"></script>
-			<script src="<?php echo(bloginfo(template_directory).'/js/bootstrap.js'); ?>"></script>
-			
-
 </body>
 </html>
