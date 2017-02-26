@@ -20,7 +20,7 @@ add_action( 'wp_enqueue_scripts', 'hybryda2017_scripts' );
 
 
 add_theme_support('post-thumbnails');
-add_theme_support('custom-logo', ['height' => 150, 'width' => 150]);
+//add_theme_support('custom-logo', ['height' => 150, 'width' => 150]);
 
 function get_slider_excerpt(){
 $excerpt = get_the_content();
