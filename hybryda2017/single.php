@@ -1,35 +1,32 @@
-<?php
-/**
- * The template for displaying all single posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
- *
- * @package hybryda2017
- */
+<?php get_header(); ?>
 
-get_header(); ?>
+<div class="container">
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
-		<?php
-		while ( have_posts() ) : the_post();
-
-			get_template_part( 'template-parts/content', get_post_format() );
-
-			the_post_navigation();
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_sidebar();
-get_footer();
+<!-- Wpisy -->
+		
+<?php if (have_posts()) : ?>
+    <?php while (have_posts()) : the_post(); ?>
+  
+      <h2><?php the_title() ?></h2>
+      <?php the_content(); ?>
+  
+    <?php endwhile; ?>
+<?php else : ?>
+  <strong>Problem z wyświetleniem ostatnich wpisów</strong>
+  <?php endif; ?>
+ 
+  <!--
+   <div class="navigation"><p><?php posts_nav_link(); ?></p></div>    
+   <!-- Left and right controls -->
+    <a class="left carousel-control" role="button" data-slide="prev" href="#" >
+       </a>  
+      <?php previous_post_link('<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>  <span class="sr-only">Previous</span>'); ?>"
+ 
+    <a class="right carousel-control" role="button" data-slide="next" href="#" >
+      <?php next_post_link('<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Next</span>'); ?>
+    </a>
+ 
+</div>
+        
+                
+  <?php get_footer(); ?>  

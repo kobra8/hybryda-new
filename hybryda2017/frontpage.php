@@ -25,10 +25,8 @@ Template name: Strona główna
     		<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
 			<div  class="item active">
 				<h4><?php the_title(); ?></h4>
-				<span><?php the_content(); ?></span>
-<!--             <span> 
-/* <?php echo get_slider_excerpt(); ?>*/ 
-</span> -->
+				<span><?php echo get_slider_excerpt(); ?></span>
+
               <a  href="<?php the_permalink() ?>">Czytaj więcej</a>
 				</div>
 		<?php endwhile; ?>	
@@ -41,26 +39,12 @@ Template name: Strona główna
     		<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
 			<div  class="item">
 				<h4><?php the_title(); ?></h4>
-				<span><?php the_content(); ?></span>
+				<span><?php echo get_slider_excerpt(); ?></span>
               <a  href="<?php the_permalink() ?>">Czytaj więcej</a>
 				</div>
 		<?php endwhile; ?>	
 	</div>
-    
-<!--
-<script>
-    function changeclass() {
 
-var NAME = document.getElementById("myCarousel")
-
-NAME.className="carousel slide"
-
-}
- 
- </script>   
-    
-<button type="button"onclick="changeclass();">ZMIEN KLASE</button>
--->
     
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">

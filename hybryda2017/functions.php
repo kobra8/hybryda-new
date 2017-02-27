@@ -20,12 +20,13 @@ add_action( 'wp_enqueue_scripts', 'hybryda2017_scripts' );
 
 
 add_theme_support('post-thumbnails');
-//add_theme_support('custom-logo', ['height' => 150, 'width' => 150]);
+
+// Wycinanie fragmentu postu
 
 function get_slider_excerpt(){
 $excerpt = get_the_content();
 $excerpt = strip_shortcodes(preg_replace(" (\[.*?\])",'',$excerpt));
-$excerpt = substr(strip_tags($excerpt), 0, 250);
+$excerpt = substr(strip_tags($excerpt), 0, 200);
 $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
 $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
 return $excerpt;
