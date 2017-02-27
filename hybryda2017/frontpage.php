@@ -18,28 +18,15 @@ Template name: Strona główna
 
   <div class="carousel-inner" role="listbox"> 
     
-		<?php $the_query = new WP_Query(array(
-			  'posts_per_page' => 1
-			  ));
-		?>
-    		<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-			<div  class="item active">
-				<h4><?php the_title(); ?></h4>
-				<span><?php echo get_slider_excerpt(); ?></span>
-
-              <a  href="<?php the_permalink() ?>">Czytaj więcej</a>
-				</div>
-		<?php endwhile; ?>	
-		
-    
     <?php $the_query = new WP_Query(array(
-			  'posts_per_page' => 4
+			  'posts_per_page' => 5
 			  ));
 		?>
     		<?php while ($the_query -> have_posts()) : $the_query -> the_post(); ?>
-			<div  class="item">
+			<div  class="item <?php if ( $the_query->current_post == 0 ) : ?>active<?php endif; ?>"> 
+<!--              Post o indeksie 0 otrzymuje klasę active-->
 				<h4><?php the_title(); ?></h4>
-				<span><?php echo get_slider_excerpt(); ?></span>
+				<span><?php echo the_excerpt(); ?></span>
               <a  href="<?php the_permalink() ?>">Czytaj więcej</a>
 				</div>
 		<?php endwhile; ?>	
