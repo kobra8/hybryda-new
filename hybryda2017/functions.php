@@ -101,7 +101,7 @@ add_filter('next_post_link', 'post_link_attributes');
 add_filter('previous_post_link', 'post_link_attributes');
 
 function post_link_attributes($output) {
-    $injection = 'class="left carousel-control"';
+    $injection = 'class="glyphicon glyphicon-chevron-right"';
     return str_replace('<a href=', '<a '.$injection.' href=', $output);
 }
 

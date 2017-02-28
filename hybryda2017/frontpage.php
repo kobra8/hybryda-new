@@ -27,7 +27,7 @@ Template name: Strona główna
 <!--              Post o indeksie 0 otrzymuje klasę active-->
 				<h4><?php the_title(); ?></h4>
 				<span><?php echo the_excerpt(); ?></span>
-              <a  href="<?php the_permalink() ?>">Czytaj więcej</a>
+              <a href="<?php the_permalink() ?>">Czytaj więcej</a>
 				</div>
 		<?php endwhile; ?>	
 	</div>

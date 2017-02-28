@@ -10,8 +10,8 @@
       <h2><?php the_title() ?></h2>
       <?php the_content(); ?>
 
-        <?php previous_post_link('<') ?>
-        <?php next_post_link('>') ?>
+        <?php previous_post_link('ddd') ?>
+        <?php next_post_link('%link') ?>
        
     <?php endwhile; ?>
 <?php else : ?>
