@@ -95,4 +95,15 @@ function email_customizer( $wp_customize ) {
 }
 add_action( 'customize_register', 'email_customizer' );
 
+// Custom styles in next/prev post links
+
+add_filter('next_post_link', 'post_link_attributes');
+add_filter('previous_post_link', 'post_link_attributes');
+
+function post_link_attributes($output) {
+    $injection = 'class="left carousel-control"';
+    return str_replace('<a href=', '<a '.$injection.' href=', $output);
+}
+
+
 ?>
