@@ -27,7 +27,7 @@ Template name: Strona główna
 <!--              Post o indeksie 0 otrzymuje klasę active-->
 				<h4><?php the_title(); ?></h4>
 				<span><?php echo the_excerpt(); ?></span>
-              <a href="<?php the_permalink() ?>">Czytaj więcej</a>
+              <a href="<?php the_permalink() ?>">Czytaj więcej ></a>
 				</div>
 		<?php endwhile; ?>	
 	</div>
@@ -36,11 +36,11 @@ Template name: Strona główna
     <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
+      <span class="sr-only">Poprzedni</span>
     </a>
     <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
       <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
+      <span class="sr-only">Następny</span>
     </a>
 </div>
   

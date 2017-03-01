@@ -21,28 +21,6 @@ add_action( 'wp_enqueue_scripts', 'hybryda2017_scripts' );
 
 add_theme_support('post-thumbnails');
 
-
-function register_my_widget(){
-  register_sidebar(array(
-      'name' => 'Widget w stopce',
-      'id'  => 'footer_1',
-      'before_widget' => '<div>',
-    'after_widget' => '</div>',
-    'before_title' =>'<h2>',
-    'after_title' =>'</h2>'
-  ));
-  register_sidebar(array(
-      'name' => 'Widget w stopce z prawej',
-      'id'  => 'footer_2',
-      'before_widget' => '<div>',
-    'after_widget' => '</div>',
-    'before_title' =>'<h2>',
-    'after_title' =>'</h2>'
-  ));
-}
-
-add_action('widgets_init','register_my_widget');
-
 function phone_customizer( $wp_customize ) {
 	
     $wp_customize->add_section( 'phone_section_one', array(
@@ -97,13 +75,17 @@ add_action( 'customize_register', 'email_customizer' );
 
 // Custom styles in next/prev post links
 
-add_filter('next_post_link', 'post_link_attributes');
-add_filter('previous_post_link', 'post_link_attributes');
-
-function post_link_attributes($output) {
-    $injection = 'class="glyphicon glyphicon-chevron-right"';
-    return str_replace('<a href=', '<a '.$injection.' href=', $output);
-}
-
+//add_filter('next_post_link', 'post_link_attributes_next');
+//add_filter('previous_post_link', 'post_link_attributes_prev');
+//
+//function post_link_attributes_next($output) {
+//    $injection = 'class="glyphicon glyphicon-chevron-right"';
+//    return str_replace('<a href=', '<a '.$injection.' href=', $output);
+//}
+//
+//function post_link_attributes_prev($output) {
+//    $injection = 'class="glyphicon glyphicon-chevron-left"';
+//    return str_replace('<a href=', '<a '.$injection.' href=', $output);
+//}
 
 ?>
