@@ -75,17 +75,20 @@ add_action( 'customize_register', 'email_customizer' );
 
 // Custom styles in next/prev post links
 
-//add_filter('next_post_link', 'post_link_attributes_next');
-//add_filter('previous_post_link', 'post_link_attributes_prev');
-//
-//function post_link_attributes_next($output) {
-//    $injection = 'class="glyphicon glyphicon-chevron-right"';
-//    return str_replace('<a href=', '<a '.$injection.' href=', $output);
-//}
-//
-//function post_link_attributes_prev($output) {
-//    $injection = 'class="glyphicon glyphicon-chevron-left"';
-//    return str_replace('<a href=', '<a '.$injection.' href=', $output);
-//}
+add_filter('next_post_link', 'post_link_attributes_next');
+add_filter('previous_post_link', 'post_link_attributes_prev');
+
+
+function post_link_attributes_prev($output) {
+    $injection = 'class="post-left glyphicon glyphicon-chevron-left" aria-hidden="true"';
+    return str_replace('<a href=', '<a '.$injection.' href=', $output);
+}
+
+function post_link_attributes_next($output) {
+    $injection = 'class="post-right glyphicon glyphicon-chevron-right" aria-hidden="true"';
+    return str_replace('<a href=', '<a '.$injection.' href=', $output);
+}
+
+
 
 ?>

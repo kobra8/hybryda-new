@@ -181,6 +181,49 @@ Additional styles customized
       filter: alpha(opacity=50);
       opacity: .5;
     }
+.post-container {
+  padding-left: 3%;
+  padding-right: 3%;  
+}
+
+@media (max-width: 768px) {
+    .post-container {
+      padding-left: 6%;
+      padding-right: 6%;
+    }
+  }
+.post-left {
+  position: absolute;
+  top: 50%;
+  left: 2%;
+  z-index: 5;
+  display: inline-block;
+  margin-top: -10px;
+  width: 20px;
+  height: 20px;
+}
+ @media (max-width: 768px) {
+    .post-left {
+      margin-left: -5px;
+    }
+  }
+
+.post-right {
+  position: absolute;
+  top: 50%;
+  right: 2%;
+  z-index: 5;
+  display: inline-block;
+  margin-top: -10px;
+  width: 20px;
+  height: 20px;
+}
+
+@media (max-width: 768px) {
+    .post-right {
+      margin-right: -5px;
+    }
+  }
 
 footer img {
   height: 50px;
