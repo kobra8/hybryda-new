@@ -159,7 +159,7 @@ Additional styles customized
           display: block;
           margin: auto;
           height:100%;
-      min-height: 150px;
+          min-height: 150px;
           background-color: #fff;
           padding: 2px 10px 10px 10px;
           text-align:justify;
@@ -193,35 +193,34 @@ Additional styles customized
     }
   }
 .post-left {
-  position: absolute;
-  top: 50%;
+  position: fixed;
   left: 2%;
+  top: 130px;
   z-index: 5;
   display: inline-block;
-  margin-top: -10px;
-  width: 20px;
-  height: 20px;
 }
+
  @media (max-width: 768px) {
     .post-left {
       margin-left: -5px;
+      position: fixed;
+      top: 70%;
     }
   }
 
 .post-right {
-  position: absolute;
-  top: 50%;
+  position: fixed;
   right: 2%;
+  top: 130px;
   z-index: 5;
   display: inline-block;
-  margin-top: -10px;
-  width: 20px;
-  height: 20px;
 }
 
 @media (max-width: 768px) {
     .post-right {
       margin-right: -5px;
+      position: fixed;
+      top: 70%;
     }
   }
 
