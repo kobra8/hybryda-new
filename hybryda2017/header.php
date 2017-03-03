@@ -13,7 +13,7 @@
 		  <nav class="navbar navbar-inverse">
             <div class="container-fluid">
               <div class="navbar-header center-content">
-                <a href="<?php echo get_settings('home'); ?>/">
+                <a title="Strona główna" href="<?php echo get_settings('home'); ?>/">
                 <img class="logo imgmenu" src="<?php echo(bloginfo(template_directory).'/images/logo_hyb_biale.png'); ?>">
                 </a>
 <!--  Hamburger menu -->
@@ -24,8 +24,8 @@
                 </button>
                 <br>
                 <ul  class="navbar-nav contact-details">
-                  <li><a  href="#"><i><?php echo get_theme_mod( 'phone_number' ); ?></i>&nbsp; |</a></li>
-                  <li><a  href="#"><i>&nbsp; <?php echo get_theme_mod( 'email_address' ); ?></i></a></li>
+                  <li><a title="Strona główna" href="<?php echo get_settings('home'); ?>/"><i><?php echo get_theme_mod( 'phone_number' ); ?></i>&nbsp; |</a></li>
+                  <li><a title="Strona główna" href="<?php echo get_settings('home'); ?>/"><i>&nbsp; <?php echo get_theme_mod( 'email_address' ); ?></i></a></li>
                 </ul>
               </div>
              

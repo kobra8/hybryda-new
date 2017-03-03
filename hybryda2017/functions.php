@@ -79,12 +79,12 @@ add_filter('next_post_link', 'post_link_attributes_next');
 add_filter('previous_post_link', 'post_link_attributes_prev');
 
 function post_link_attributes_prev($output) {
-    $injection = 'class="post-left glyphicon glyphicon-chevron-left" aria-hidden="true"';
+    $injection = 'title="Starsza wiadomość" class="post-left glyphicon glyphicon-chevron-left" aria-hidden="true"';
     return str_replace('<a href=', '<a '.$injection.' href=', $output);
 }
 
 function post_link_attributes_next($output) {
-    $injection = 'class="post-right glyphicon glyphicon-chevron-right" aria-hidden="true"';
+    $injection = 'title="Nowsza wiadomość" class="post-right glyphicon glyphicon-chevron-right" aria-hidden="true"';
     return str_replace('<a href=', '<a '.$injection.' href=', $output);
 }
 
