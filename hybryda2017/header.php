@@ -45,24 +45,7 @@
                           'walker'            => new wp_bootstrap_navwalker())
                       );
                   ?>
-               
-
-<!-- menu Bootstrap w HTML
-                <ul class="nav navbar-nav">
-                  <li><a href="#">Aktualności</a></li>
-                    <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">O nas<span class="caret">          </span></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Zrealizowane projekty</a></li>
-                        <li><a href="#">Gwarancja jakości</a></li>
-                        <li><a href="#">Kadra</a></li>
-                        <li><a href="#">Nasi klienci o Nas</a></li>
-                      </ul>
-                    </li>
-                  <li><a href="#">Egzaminy TELC</a></li>
-                  <li><a href="#">Galeria</a></li> 
-                  <li><a href="#">Kontakt</a></li>
-                </ul>
--->            
+                          
             </div>
           </nav>    
 		</header>

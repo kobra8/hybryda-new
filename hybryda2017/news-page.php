@@ -21,14 +21,12 @@ get_header(); ?>
 		<h2><?php the_title() ?></h2>
         <h6> <?php the_date(); ?> </h6>
         <?php the_content(); ?>
-    
-      <?php previous_post_link('%link', ''); ?>
-      <?php next_post_link('%link', ''); ?> 
+        <hr class="posthr">
       <?php endwhile; ?>
     
     <?php if ($the_query->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
-    <?php echo get_next_posts_link( 'Older Entries', $the_query->max_num_pages ); // display older posts link ?>
-    <?php echo get_previous_posts_link( 'Newer Entries' ); // display newer posts link ?>
+    <?php echo get_next_posts_link( '<span class="post-left glyphicon glyphicon-chevron-left" aria-hidden="true">', $the_query->max_num_pages ); // display older posts link ?>
+    <?php echo get_previous_posts_link( '<span class="post-right glyphicon glyphicon-chevron-right" aria-hidden="true">' ); // display newer posts link ?>
     <?php } ?>
   </div>
 

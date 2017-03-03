@@ -27,7 +27,7 @@ Template name: Strona główna
 <!--              Post o indeksie 0 otrzymuje klasę active-->
 				<h4><?php the_title(); ?></h4>
 				<span><?php echo the_excerpt(); ?></span>
-              <a href="<?php the_permalink() ?>">Czytaj więcej ></a>
+              <a class="btn btn-primary btnsm" role="button" href="<?php the_permalink() ?>">Czytaj więcej</a>
 				</div>
 		<?php endwhile; ?>	
 	</div>
@@ -50,7 +50,7 @@ Template name: Strona główna
     <div class="col-sm-4">
       <a href="<?php echo get_settings('home').'/?page_id=2396'; ?>">
         <img class="imgmenu"src="<?php echo(bloginfo(template_directory).'/images/oferta.jpg'); ?>" class="img-responsive" style="width:100%" alt="Image">
-        <p>Oferta szkoleniowa</p>
+        <p>Oferta szkoleniowa - bony szkoleniowe</p>
       </a>
     </div>
     <div class="col-sm-4"> 
