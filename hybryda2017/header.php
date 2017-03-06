@@ -10,7 +10,7 @@
 	<body>
 
     	<header>
-		  <nav class="navbar navbar-inverse">
+		  <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
               <div class="navbar-header center-content">
                 <a title="Strona główna" href="<?php echo get_settings('home'); ?>/">
