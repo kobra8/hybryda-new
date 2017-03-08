@@ -20,7 +20,7 @@
 <?php else : ?>
   <strong>Problem z wyświetleniem ostatnich wpisów</strong>
   <?php endif; ?>
-
+<br><br>
 </div>
         
                 
