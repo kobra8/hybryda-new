@@ -48,7 +48,7 @@ Template name: Strona główna
  <br>
   <div class="row">
     <div class="col-sm-4">
-      <a href="<?php echo get_settings('home').'/?page_id=2396'; ?>">
+      <a href="<?php echo get_settings('home').'/?p=2416'; ?>">
         <img class="imgmenu"src="<?php echo(bloginfo(template_directory).'/images/oferta.jpg'); ?>" class="img-responsive" style="width:100%" alt="Image">
         <p>Oferta szkoleniowa - bony szkoleniowe</p>
       </a>
@@ -60,7 +60,7 @@ Template name: Strona główna
       </a>
     </div>
       <div class="col-sm-4">
-        <a href="<?php echo get_settings('home').'/?page_id=2381'; ?>">
+        <a href="<?php echo get_settings('home').'/?p=2332'; ?>">
           <img class="imgmenu" src="<?php echo(bloginfo(template_directory).'/images/projekty.jpg'); ?>" class="img-responsive" style="width:100%" alt="Image">
           <p>Realizowane projekty</p>
         </a>

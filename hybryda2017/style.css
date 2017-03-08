@@ -119,6 +119,13 @@ a img.aligncenter {
 Additional styles customized
 */
 
+/* Class for img from automatic posts style*/
+@media (max-width: 768px) {
+.size-full, .alignnone {
+  width: 100%;
+  height: inherit;
+  }
+}
  /* Remove the navbar's default margin-bottom and rounded borders */ 
     .navbar {
       margin-bottom: 0;
@@ -181,6 +188,13 @@ Additional styles customized
       filter: alpha(opacity=50);
       opacity: .5;
     }
+    @media (min-width: 468px) and (max-width:767px){
+    .imgmenu {
+        width: 50% !important;
+    }
+}
+
+
 .post-container {
   padding-left: 3%;
   padding-right: 3%;  
