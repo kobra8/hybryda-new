@@ -2356,6 +2356,40 @@ if (typeof jQuery === 'undefined') {
     return this
   }
 
+//  
+//  /*—————————————————-*/
+///*	OWL Carousel
+///*—————————————————-*/
+//
+//  $('#owl-gallery').owlCarousel({
+//      items : 6, //6 zdjęć dla ekranów o szerokości przekraczającej 1000px
+//      itemsDesktop : [1000,5], //5 zdjęć dla ekranów o szerokości pomiędzy 1000px a 901px
+//      itemsDesktopSmall : [900,3], // 3 zdjęcia dla ekranów o szerokości pomiędzy 900px a 601px
+//      itemsTablet: [600,2], //2 zdjęcia dla ekranów o szerokości pomiędzy 600px a 481px
+//      itemsMobile : [480,1], // 1 zdjęcie dla ekranów o szerokości do 480px
+//	  autoPlay : true,
+//	  lazyLoad : true
+//  });
+// 
+//  // Custom Navigation Events
+//  $('.next').click(function(){
+//    $('#owl-gallery').trigger('owl.next');
+//  })
+//  $('.prev').click(function(){
+//    $('#owl-gallery').trigger('owl.prev');
+//  })
+// 
+//
+//
+///*—————————————————-*/
+///*	Nivo Lightbox
+///*—————————————————-*/
+//	
+//$('.lightbox').nivoLightbox({
+//	effect: 'fadeScale',
+//	keyboardNav: true,
+//	errorMessage: 'The requested content cannot be loaded. Please try again later.'
+//});	
 
   // AFFIX DATA-API
   // ==============
