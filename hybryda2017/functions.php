@@ -90,46 +90,47 @@ function post_link_attributes_next($output) {
     return str_replace('<a href=', '<a '.$injection.' href=', $output);
 }
 
- /**
-     * Gets all images attached to a post
-     */
-   function get_media_library_images() {
+ /* This function gets images from media library */
 
-    $ml_images = new WP_Query( array(
-        'page_id' => 19,
-        'post_type' => 'attachment',
-        'post_mime_type' =>'image',
-        'post_status' => 'inherit',
-//        'posts_per_page' => 10,
-        'orderby' => 'desc'
-    ));
-    $my_images = array();
-    foreach ( $ml_images->posts as $image) {
-        $my_images[]= array('url'=>$image->guid,'title'=>$image->post_title);		
-    }
-    return $my_images;
-}
+//   function get_media_library_images() {
+//
+//    $ml_images = new WP_Query( array(
+//        'page_id' => 19,
+//        'post_type' => 'attachment',
+//        'post_mime_type' =>'image',
+//        'post_status' => 'inherit',
+////        'posts_per_page' => 10,
+//        'orderby' => 'desc'
+//    ));
+//    $my_images = array();
+//    foreach ( $ml_images->posts as $image) {
+//        $my_images[]= array('url'=>$image->guid,'title'=>$image->post_title);		
+//    }
+//    return $my_images;
+//}
+//
+//function display_media_library_images() {
+//	$imgblock = "";
+//	foreach($images = get_media_library_images() as $singleimage) {		
+//		$imgblock .= '<div class=""><a href="'.$singleimage["url"].'" data-lightbox-type="ajax" data-lightbox-gallery="gallery1" class="lightbox"><img class="" src="'.$singleimage["url"].'" alt="" title="'.$singleimage["title"].'" /></a></div>';		
+//	}
+//return $imgblock;
+//}
 
-function display_media_library_images() {
-	$imgblock = "";
-	foreach($images = get_media_library_images() as $singleimage) {		
-		$imgblock .= '<div class=""><a href="'.$singleimage["url"].'" data-lightbox-type="ajax" data-lightbox-gallery="gallery1" class="lightbox"><img class="" src="'.$singleimage["url"].'" alt="" title="'.$singleimage["title"].'" /></a></div>';		
-	}
-return $imgblock;
-}
-
+ /* This function gets images from page by page ID */
 
 function get_page_images() {
  $images = get_children( array( 'post_parent' => 19, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) ); 
-/* $images is now a object that contains all images (related to post id 1) and their information ordered like the gallery interface. */
+/* $images is now a object that contains all images (related to post id 19) and their information ordered like the gallery interface. */
         if ( $images ) { 
 
                 //looping through the images
                 foreach ( $images as $attachment_id => $attachment ) {
                 ?>
 
-                            <?php /* Outputs the image like this: <img src="" alt="" title="" width="" height="" /> */  ?> 
+                            <a class="lightbox" href="<?php echo get_attachment_link( $attachment_id );  ?> ">
                             <?php echo wp_get_attachment_image( $attachment_id, 'medium' ); ?>
+                            </a>   
                 <?php
                 }
         }
