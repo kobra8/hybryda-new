@@ -127,12 +127,14 @@ function get_page_images() {
                 //looping through the images
                 foreach ( $images as $attachment_id => $attachment ) {
                 ?>
-
-                            <a class="lightbox" href="<?php echo get_attachment_link( $attachment_id );  ?> ">
-                            <?php echo wp_get_attachment_image( $attachment_id, 'medium' ); ?>
+                     
+                    <?php      echo '<a href="' . wp_get_attachment_image_src( $attachment_id,'full' )[0] . '" class="lightbox">'; ?>
+                          
+                            <?php echo wp_get_attachment_image( $attachment_id, 'thumbnail', '', array("class" => "img-thumbnail") ); ?>
                             </a>   
                 <?php
                 }
         }
     }
 ?>
+<!-- <a class="lightbox" href="<?php echo get_attachment_link( $attachment_id );  ?> "> -->
