@@ -10,12 +10,15 @@ register_nav_menus( array(
 function hybryda2017_scripts() {
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri()."/styles/bootstrap.css" );
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
+    wp_enqueue_style( 'nivo-lightbox', get_template_directory_uri()."/styles/nivo-lightbox.css" );
+    wp_enqueue_style( 'default', get_template_directory_uri()."/styles/themes/default/default.css" );
    // załaduj biblioteki jQuery
-    wp_enqueue_script( 'jquery-js', get_template_directory_uri() . '/js/jquery.js', array( 'jquery' ), '',  true );	
+    wp_enqueue_script( 'jquery-js', get_template_directory_uri() . '/js/jquery.min.js', array( 'jquery' ), '',  true );	
     // załaduj skrypt js bootstrapa
     wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array( 'jquery' ), '',  true );
-   // załaduj skrypt js galerii imgLiquid
+   // załaduj skrypt js nivo-lightbox
     wp_enqueue_script( 'nivo-lightbox', get_template_directory_uri() . '/js/nivo-lightbox.js', array( 'jquery' ), '',  true );
+    wp_enqueue_script( 'lightbox-init', get_template_directory_uri() . '/js/lightbox-init.js', array( 'jquery' ), '',  true ); 
 }
 
 add_action( 'wp_enqueue_scripts', 'hybryda2017_scripts' );
@@ -128,7 +131,7 @@ function get_page_images() {
                 foreach ( $images as $attachment_id => $attachment ) {
                 ?>
                      
-                    <?php      echo '<a href="' . wp_get_attachment_image_src( $attachment_id,'full' )[0] . '" class="lightbox">'; ?>
+                    <?php      echo '<a href="' . wp_get_attachment_image_src( $attachment_id,'full' )[0] . '" data-lightbox-gallery="gallery1" >'; ?>
                           
                             <?php echo wp_get_attachment_image( $attachment_id, 'thumbnail', '', array("class" => "img-thumbnail") ); ?>
                             </a>   
@@ -137,4 +140,5 @@ function get_page_images() {
         }
     }
 ?>
-<!-- <a class="lightbox" href="<?php echo get_attachment_link( $attachment_id );  ?> "> -->
+
+<!--  -->
