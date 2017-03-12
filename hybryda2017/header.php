@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title><?php echo(bloginfo('name')) . ' '; ?></title>
+<title>
+	<?php 
+	if(is_home()) {  
+		echo get_bloginfo('description') . " &raquo; " . get_bloginfo('name'); 
+	} 
+	else { 
+		echo wp_title('', false) . " &raquo; " . get_bloginfo('name'); 
+	} 
+	?>	
+</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
     <?php wp_head(); ?>
