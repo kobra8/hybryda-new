@@ -93,25 +93,21 @@ function post_link_attributes_next($output) {
     return str_replace('<a href=', '<a '.$injection.' href=', $output);
 }
 
- /* This function gets images from page by page ID */
-
 function get_page_images() {
- $images = get_children( array( 'post_parent' => 19, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'title', 'order' => 'ASC', 'numberposts' => 99 ) ); 
+  $images = get_children( array( 'post_parent' => 19, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'title', 'order' => 'ASC', 'numberposts' => 99 ) ); 
 /* $images is now a object that contains all images (related to post id 19) and their information ordered like the gallery interface. */
-        if ( $images ) { 
+  
+   if ( $images ) { 
 
                 //looping through the images
                 foreach ( $images as $attachment_id => $attachment ) {
                 ?>
-                     
-                    <?php      echo '<a href="' . wp_get_attachment_image_src( $attachment_id,'full' )[0] . '" data-lightbox-gallery="gallery1" >'; ?>
-                          
-                      <?php echo wp_get_attachment_image( $attachment_id, 'thumbnail', '', array("class" => "img-thumbnail") ); ?>
-                            </a>   
-                <?php
-                }
-        }
-    }
-?>
+      <a href="<?php echo  wp_get_attachment_image_src( $attachment_id,'full' )[0] ; ?> " data-lightbox-gallery="gallery1">
+           <?php echo wp_get_attachment_image( $attachment_id, 'thumbnail', '', array("class" => "img-thumbnail") ); ?>
+      </a>
 
-<!--  -->
+         <?php
+    }
+  }
+}
+?>
