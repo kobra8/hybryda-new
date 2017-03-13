@@ -123,7 +123,7 @@ function post_link_attributes_next($output) {
  /* This function gets images from page by page ID */
 
 function get_page_images() {
- $images = get_children( array( 'post_parent' => 19, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'menu_order', 'order' => 'ASC', 'numberposts' => 999 ) ); 
+ $images = get_children( array( 'post_parent' => 19, 'post_type' => 'attachment', 'post_mime_type' => 'image', 'orderby' => 'title', 'order' => 'ASC', 'numberposts' => 99 ) ); 
 /* $images is now a object that contains all images (related to post id 19) and their information ordered like the gallery interface. */
         if ( $images ) { 
 

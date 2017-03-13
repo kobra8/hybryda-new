@@ -3,8 +3,8 @@
 	<head>
 <title>
 	<?php 
-	if(is_home()) {  
-		echo get_bloginfo('description') . " &raquo; " . get_bloginfo('name'); 
+	if(is_front_page()) {  
+		echo get_bloginfo('name') . " &raquo; " . get_bloginfo('description'); 
 	} 
 	else { 
 		echo wp_title('', false) . " &raquo; " . get_bloginfo('name'); 
