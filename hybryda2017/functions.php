@@ -100,18 +100,14 @@ function get_page_images() {
 /* $images is now a object that contains all images (related to post id 19) and their information ordered like the gallery interface. */
         if ( $images ) { 
 
-                //looping through the images
-                foreach ( $images as $attachment_id => $attachment ) {
-                ?>
-                     
-                    <?php      echo '<a href="' . wp_get_attachment_image_src( $attachment_id,'full' )[0] . '" data-lightbox-gallery="gallery1" >'; ?>
-                          
-                      <?php echo wp_get_attachment_image( $attachment_id, 'thumbnail', '', array("class" => "img-thumbnail") ); ?>
-                            </a>   
-                <?php
-                }
+        //looping through the images
+          foreach ( $images as $attachment_id => $attachment ) {
+            
+              echo '<a href="' . wp_get_attachment_image_src( $attachment_id,'full' )[0] . '" data-lightbox-gallery="gallery1" >';       
+              echo wp_get_attachment_image( $attachment_id, 'thumbnail', '', array("class" => "img-thumbnail") ); 
+              echo '</a>';  
+    
         }
+      }
     }
 ?>
-
-<!--  -->
