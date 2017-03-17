@@ -10,6 +10,9 @@
     <ul class="nav navbar-nav navbar-right"> 
       <li><a href="http://www.hybryda.com.pl/wp/wp-login.php?redirect_to=http%3A%2F%2Fwww.hybryda.com.pl%2Fwp%2Fwp-admin%2F&reauth=1"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
+    <ul class="nav navbar-nav">
+        <li><a href="https:/github.com/kobra8">&copy; kobra8</a></li>
+    </ul>
   </div>
 </footer>
 
